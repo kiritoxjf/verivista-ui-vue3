@@ -7,8 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./src/views/HelloWorld.vue')['default']
+    FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
+    FrameView: typeof import('./src/views/FrameView.vue')['default']
+    HeaderComponent: typeof import('./src/components/HeaderComponent.vue')['default']
+    HomeView: typeof import('./src/views/HomeView.vue')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    PoemComponent: typeof import('./src/components/PoemComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

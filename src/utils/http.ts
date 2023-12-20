@@ -78,7 +78,7 @@ export const get = async <T>(
 // 封装 POST 请求
 export const post = async <T>(
 	url: string,
-	data?: unknown,
+	data?: any,
 	config?: AxiosRequestConfig
 ): Promise<ApiResponse<T>> => {
 	try {
@@ -92,7 +92,7 @@ export const post = async <T>(
 // 封装 PUT 请求
 export const put = async <T>(
 	url: string,
-	data?: unknown,
+	data?: any,
 	config?: AxiosRequestConfig
 ): Promise<ApiResponse<T>> => {
 	try {

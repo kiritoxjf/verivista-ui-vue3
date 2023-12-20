@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import HelloWorld from "./views/HelloWorld.vue";
-import { useHomeStore } from "./stores/home";
 import { zhCN, dateZhCN } from "naive-ui";
-const store = useHomeStore();
 </script>
 
 <template>
-	<div>
+	<Suspense>
 		<n-config-provider :locale="zhCN" :date-locale="dateZhCN">
-			<HelloWorld :msg="store.name" />
+			<router-view />
 		</n-config-provider>
-	</div>
+	</Suspense>
 </template>
 
-<style scoped></style>
+<style scoped>
+.n-config-provider {
+	height: 100%;
+	width: 100%;
+}
+</style>
