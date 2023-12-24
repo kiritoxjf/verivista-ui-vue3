@@ -3,6 +3,7 @@ import "./style.less";
 import App from "./App.vue";
 import router from "./routes";
 import { createPinia } from "pinia";
+import 'default-passive-events'
 
 const app = createApp(App);
 

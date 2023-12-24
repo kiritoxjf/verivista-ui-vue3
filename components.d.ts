@@ -7,13 +7,16 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CardComponent: typeof import('./src/components/CardComponent.vue')['default']
     FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
     FrameView: typeof import('./src/views/FrameView.vue')['default']
     HeaderComponent: typeof import('./src/components/HeaderComponent.vue')['default']
     HomeView: typeof import('./src/views/HomeView.vue')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     PoemComponent: typeof import('./src/components/PoemComponent.vue')['default']
+    PostComponent: typeof import('./src/components/PostComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StateComponent: typeof import('./src/components/StateComponent.vue')['default']
   }
 }

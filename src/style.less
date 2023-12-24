@@ -70,3 +70,56 @@ button:focus-visible {
 	font-family: "Circle Font";
 	src: url("./assets/font/CatZhuYuanTi.ttf");
 }
+
+@keyframes border_rotating {
+  0% {
+    border-image: linear-gradient(0deg, #5b247a,#1bcedf) 1 stretch;
+  }
+  25% {
+    border-image: linear-gradient(90deg, #5b247a,#1bcedf) 1 stretch;
+  }
+  50% {
+    border-image: linear-gradient(180deg, #5b247a,#1bcedf) 1 stretch;
+  }
+  75% {
+    border-image: linear-gradient(270deg, #5b247a,#1bcedf) 1 stretch;
+  }
+  100% {
+    border-image: linear-gradient(360deg, #5b247a,#1bcedf) 1 stretch;
+  }
+}
+
+.gradient_shadow {
+	border: 0.2rem solid transparent;
+}
+
+.gradient_shadow:hover {
+	transform: translate(0);
+	transform-style: preserve-3d;
+	animation: border_rotating 2s ease infinite;
+}
+.gradient_shadow::before {
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+.gradient_shadow:hover::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	transform: translate3d(0, 0, -0.125rem);
+	background: linear-gradient(316deg, #5b247a,#1bcedf);
+	filter: blur(1.5rem);
+	clip-path: polygon(
+		-100vmax -100vmax,
+		100vmax -100vmax,
+		100vmax 100vmax,
+		-100vmax 100vmax,
+		-100vmax -100vmax,
+		0 0,
+		0 100%,
+		100% 100%,
+		100% 0,
+		0 0
+	);
+	opacity: 1;
+}
